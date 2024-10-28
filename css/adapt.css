@@ -1,0 +1,228 @@
+@media (min-width: 2048px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10%;
+  }
+}
+
+@media (max-width: 2048px) {
+  .text-20px {
+    font-size: calc(10px + 10 * (100vw / 1920));
+  }
+  .zagolovok-big {
+    /*       font-size: 96px; */
+    font-size: calc(86px + 10 * (100vw / 1920));
+  }
+
+  .zagolovok-middle {
+    /*       font-size: 32px; */
+    font-size: calc(22px + 10 * (100vw / 1920));
+  }
+
+  .zagolovok-imbue-big {
+    /*       font-size: 64px; */
+    font-size: calc(54px + 10 * (100vw / 1920));
+  }
+  .zagolovok-imbue-big-white {
+    /*       font-size: 64px; */
+    font-size: calc(54px + 10 * (100vw / 1920));
+  }
+  .text-36px {
+    /*       font-size: 36px; */
+    font-size: calc(26px + 10 * (100vw / 1920));
+  }
+  .text-36px a {
+    /*       font-size: 36px; */
+    font-size: calc(26px + 10 * (100vw / 1920));
+  }
+  .text-20px {
+    /*       font-size: 20px; */
+    font-size: calc(10px + 10 * (100vw / 1920));
+  }
+  .text-18px {
+    /*       font-size: 20px; */
+    font-size: calc(10px + 10 * (100vw / 1920));
+  }
+  .text-20px a {
+    /*       font-size: 20px; */
+    font-size: calc(10px + 10 * (100vw / 1920));
+  }
+}
+
+@media (max-width: 1575px) {
+  .text-20px {
+    font-size: calc(10px + 10 * (100vw / 1920));
+  }
+  .zagolovok-big {
+    /*       font-size: 96px; */
+    font-size: calc(86px + 10 * (100vw / 1920));
+  }
+
+  .zagolovok-middle {
+    /*       font-size: 32px; */
+    font-size: calc(22px + 10 * (100vw / 1920));
+  }
+
+  .zagolovok-imbue-big {
+    /*       font-size: 64px; */
+    font-size: calc(54px + 10 * (100vw / 1920));
+  }
+  .zagolovok-imbue-big-white {
+    /*       font-size: 64px; */
+    font-size: calc(54px + 10 * (100vw / 1920));
+  }
+  .text-36px {
+    /*       font-size: 36px; */
+    font-size: calc(26px + 10 * (100vw / 1920));
+  }
+  .text-36px a {
+    /*       font-size: 36px; */
+    font-size: calc(26px + 10 * (100vw / 1920));
+  }
+  .text-20px {
+    /*       font-size: 20px; */
+    font-size: calc(10px + 10 * (100vw / 1920));
+  }
+  .text-18px {
+    /*       font-size: 20px; */
+    font-size: calc(10px + 10 * (100vw / 1920));
+  }
+  .text-20px a {
+    /*       font-size: 20px; */
+    font-size: calc(10px + 10 * (100vw / 1920));
+  }
+}
+
+@media (max-width: 1200px) {
+  .block-s6-text img {
+    /* display: flex; */
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    /* padding: 1% 2% 3% 1%; */
+    border-radius: 0px 45px 0px 45px;
+  }
+
+  .block-s6-citata {
+    display: block;
+  }
+
+  .block-s6-citata-text-1 {
+    /* padding: 0 20%; */
+  }
+
+  .block-s6-citata-text-2 {
+    /* display: flex; */
+    /* justify-content: end; */
+    /* padding-left: 60%; */
+  }
+}
+@media (max-width: 1180px) {
+  .all-block-slider {
+    display: block;
+  }
+
+  .pl-20px {
+    padding-left: 24px;
+  }
+
+  .block-s3-1 {
+    display: block;
+  }
+
+  .block-sliders-news {
+    display: flex;
+    flex-flow: row wrap;
+    /* padding: 0; */
+    justify-content: center;
+  }
+
+  .header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  .block-s5 {
+    display: block;
+  }
+
+  .title-main-s2 {
+    padding-top: 10%;
+  }
+
+  .block-text-slider {
+    padding: 5% 12% 8%;
+    flex-basis: 30%;
+  }
+
+  .card-title {
+    border-radius: 20px;
+    background: #acd3f8;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    padding: 5px 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .block-s5-left {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    /* padding-right: 20px; */
+    padding-bottom: 5%;
+  }
+
+  #hidden {
+    display: none;
+  }
+
+  .footer-wrapper {
+    display: block;
+    justify-content: space-between;
+    height: min-content;
+  }
+  .block-partners-2-inner-1 {
+    display: block;
+  }
+  .block-partners-2-inner-2 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 848px) {
+  #hidden {
+    display: none;
+  }
+  .zagolovok-imbue-big {
+    /* font-size: 64px; */
+    font-size: calc(25px + 10 * (100vw / 1920));
+  }
+}
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .ul-nav img {
+    width: 100%;
+  }
+
+  .block-s5 {
+    display: block;
+  }
+  #hidden {
+    display: none;
+  }
+  .zagolovok-big {
+    /* font-size: 96px; */
+    font-size: calc(19px + 10 * (100vw / 1920));
+  }
+}
