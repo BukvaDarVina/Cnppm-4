@@ -13,56 +13,52 @@ Template Post Type: page
                     <div class="menu-about-ploshadok">
                         <ul class="ul-ploshadok">
                             <li class="li-ploshadok ">
-                                <a href="#">
+                                <a href="<?php echo get_permalink(2937, false)?>">
                                     Информация о проекте
                                 </a>
                             </li>
                             <li class="li-ploshadok">
-                                <a href="#">
+                                <a href="<?php echo get_permalink(2941, false)?>">
                                     График
                                     стажировок
                                 </a>
                             </li>
                             <li class="li-ploshadok">
-                                <a href="./index3AboutCityes.html">
+                                <a href="<?php echo get_permalink(2943, false)?>">
                                     Список площадок
                                 </a>
                             </li>
                             <li class="li-ploshadok active-ploshadka">
-                                <a href="#">
+                                <a href="<?php echo get_permalink(2945, false)?>">
                                     Контакты
                                 </a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="block-contacts-1">
-                        <a href="tel:88005553535">88453 66 90 00</a> <br>
-                        <a href="mailto:mail@mail.ru">mail@mail.ru</a> <br>
-                        <address>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos cupiditate enim hic
-                            delectus. Possimus, quas nobis reiciendis, excepturi veritatis libero impedit quae sunt enim
-                            repudiandae, odit fugit rerum sed placeat!
-                        </address>
-                    </div>
-                    <div class="block-contacts-1">
-                        <a href="tel:88005553535">88453 66 90 00</a> <br>
-                        <a href="mailto:mail@mail.ru">mail@mail.ru</a> <br>
-                        <address>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos cupiditate enim hic
-                            delectus. Possimus, quas nobis reiciendis, excepturi veritatis libero impedit quae sunt enim
-                            repudiandae, odit fugit rerum sed placeat!
-                        </address>
-                    </div>
-                    <div class="block-contacts-1">
-                        <a href="tel:88005553535">88453 66 90 00</a> <br>
-                        <a href="mailto:mail@mail.ru">mail@mail.ru</a> <br>
-                        <address>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos cupiditate enim hic
-                            delectus. Possimus, quas nobis reiciendis, excepturi veritatis libero impedit quae sunt enim
-                            repudiandae, odit fugit rerum sed placeat!
-                        </address>
-                    </div>
+                    <?php
+
+                        $loop1 = CFS()->get('inter_map_conts');
+                            foreach ($loop1 as $row1) {
+                            
+                     ?>
+
+                        <div class="block-contacts-1">
+                            <a href="tel:<?= $row1['cont_tel']?>"><?= $row1['cont_tel']?></a> <br>
+                            <a href="mailto:<?= $row1['cont_mail']?>"><?= $row1['cont_mail']?></a> <br>
+                            <address>
+                                <?= $row1['cont_text']?>
+                            </address>
+                        </div>
+                    
+                    <?php
+                            }
+                    ?>
+
+                    <?php
+                        the_content();
+                    ?>
+
                 </div>
 
 <?php get_template_part( 'interactive_map_end' ); ?>

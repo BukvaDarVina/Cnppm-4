@@ -67,6 +67,13 @@
                   <a href="<?php echo get_permalink(24, false)?>" class="z-ind"> Стажировочные площадки </a>
                 </li>
                 <li class="nav-bottom">
+                  <a href="<?php echo get_permalink(2937, false)?>" class="z-ind"> 
+                    Цифровая платформа<br/> 
+                    информационных ресурсов<br />
+                    «Приамурье – мой край родной» 
+                  </a>
+                </li>
+                <li class="nav-bottom">
                   <a href="<?php echo get_permalink(27, false)?>" class="z-ind">
                     Муниципальные методические службы
                   </a>

@@ -15,7 +15,7 @@ Template Post Type: page
 
                     <div class="about-map-class">
                         <div class="title">
-                            <h1 class="title-map">><?php the_title(); ?></h1>
+                            <h1 class="title-map"><?= CFS()->get('cart_title')?></h1>
                         </div>
                         <div class="amur-citys-rayones">
                             <div class="amur-citys">

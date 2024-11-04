@@ -12,23 +12,23 @@ Template Post Type: page
                     <div class="menu-about-ploshadok">
                         <ul class="ul-ploshadok">
                             <li class="li-ploshadok ">
-                                <a href="#">
+                                <a href="<?php echo get_permalink(2937, false)?>">
                                     Информация о проекте
                                 </a>
                             </li>
                             <li class="li-ploshadok">
-                                <a href="#">
+                                <a href="<?php echo get_permalink(2941, false)?>">
                                     График
                                     стажировок
                                 </a>
                             </li>
-                            <li class="li-ploshadok active-ploshadka">
-                                <a href="#">
+                            <li class="li-ploshadok  active-ploshadka">
+                                <a href="<?php echo get_permalink(2943, false)?>">
                                     Список площадок
                                 </a>
                             </li>
                             <li class="li-ploshadok">
-                                <a href="#">
+                                <a href="<?php echo get_permalink(2945, false)?>">
                                     Контакты
                                 </a>
                             </li>
@@ -36,236 +36,97 @@ Template Post Type: page
                     </div>
                     <h3 class="title-ploshadki">Города Амурской области</h3>
                     <div class="ploshadka-wrapper">
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                        <?php
+                            $cites_id = 7;
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                            #получаем дочерние рубрики
+                            $sub_cat_city = get_categories ( array(
+                                'child_of' => $cites_id,
+                                'hide_empty' => 0
+                            ));
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                            if(sub_cat_city){
+                                foreach( sub_cat_city as $cat){
+                                    ?>
+                                    <div class="ploshadka">
+                                        <h2 class="title-ploshadki-inner"><?php $cat->name; ?></h2>
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                                        <ul class="names-ploshadki">
+                                            <?php
+                                                $cat_city_posts = get_posts( array(
+                                                    'numberposts'   => 3,
+                                                    'category'      => $cat->cat_ID,
+                                                    'orderby'       => 'post_date',
+                                                    'order'         => 'DESC',
+                                                ));
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                                                global $post;
+                                                foreach($cat_city_posts as $post){
+                                                    setup_postdata($post);?>
+                                                    <li class="title-ploshadki-inner-inner"><a href="<?= get_permalink()?>"><?= get_the_title()?> </a></li>
+                                                <?php    
+                                                }?>
+                                        </ul>
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                                        <a href="<?php echo get_permalink(2948, false)?>">
+                                            <button class="btn-ploshadka">
+                                                Все площадки
+                                            </button>
+                                        </a>
+                                 
+                                <?php        
+                                }
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
-
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
-
-                        </div>
-
+                                wp_reset_postdata();
+                            }?>
 
                     </div>
                     <h3 class="title-ploshadki">Районы (округа) Амурской области</h3>
                     <div class="ploshadka-wrapper">
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                        
+                    <?php
+                            $okr_id = 8;
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                            #получаем дочерние рубрики
+                            $sub_cat_okr = get_categories ( array(
+                                'child_of' => $okr_id,
+                                'hide_empty' => 0
+                            ));
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                            if(sub_cat_okr){
+                                foreach( sub_cat_okr as $cat){
+                                    ?>
+                                    <div class="ploshadka">
+                                        <h2 class="title-ploshadki-inner"><?php $cat->name; ?></h2>
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                                        <ul class="names-ploshadki">
+                                            <?php
+                                                $cat_okr_posts = get_posts( array(
+                                                    'numberposts'   => 3,
+                                                    'category'      => $cat->cat_ID,
+                                                    'orderby'       => 'post_date',
+                                                    'order'         => 'DESC',
+                                                ));
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                                                global $post;
+                                                foreach($cat_okr_posts as $post){
+                                                    setup_postdata($post);?>
+                                                    <li class="title-ploshadki-inner-inner"><a href="<?= get_permalink()?>"><?= get_the_title()?> </a></li>
+                                                <?php    
+                                                }?>
+                                        </ul>
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
+                                        <a href="<?php echo get_permalink(2948, false)?>">
+                                            <button class="btn-ploshadka">
+                                                Все площадки
+                                            </button>
+                                        </a>
+                                 
+                                <?php        
+                                }
 
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
-
-                        </div>
-                        <div class="ploshadka">
-                            <h2 class="title-ploshadki-inner">Имя</h2>
-                            <ul class="names-ploshadki">
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                                <li class="title-ploshadki-inner-inner"><a href="#">Площадка № </a></li>
-                            </ul>
-                            <a href="#">
-                                <button class="btn-ploshadka">
-                                    Все площадки
-                                </button>
-                            </a>
-
-                        </div>
-
+                                wp_reset_postdata();
+                            }?>
 
                     </div>
                 </div>
